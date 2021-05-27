@@ -7,7 +7,7 @@ namespace Alura\Cursos\Controller;
 use Alura\Cursos\Entity\Curso;
 use Alura\Cursos\Infra\EntityManagerCreator;
 
-class Alterar implements InterfaceControladorRequisicao
+class Alterar extends ControllerHtml implements InterfaceControladorRequisicao
 {
     /**
      * @var \Doctrine\ORM\EntityManagerInterface
@@ -29,6 +29,8 @@ class Alterar implements InterfaceControladorRequisicao
         }
         $curso=$this->repositoryCursos->find($id);
         $titulo=isset($curso) ? "Altera curso ".$curso->getDescricao() : header('location:/listar-cursos');
-        require __DIR__."./../../view/cursos/inserir-curso.php";
+
+        echo $this->renderizaHtml('cursos/inserir-curso.php',['titulo'=>$titulo,'curso'=>$curso]);
+
     }
 }
