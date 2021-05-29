@@ -38,6 +38,7 @@ class RealizaLogin implements InterfaceControladorRequisicao
             echo "Usuario ou senha incorreta";
             return;
         }
+        $_SESSION['logado']=true;
         header('location:/listar-cursos');
     }
 }
