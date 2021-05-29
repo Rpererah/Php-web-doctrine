@@ -1,17 +1,13 @@
 <?php
 
-use Alura\Cursos\Controller\Alterar;
-use Alura\Cursos\Controller\Exclusao;
-use Alura\Cursos\Controller\InserirCurso;
-use Alura\Cursos\Controller\ListarCursos;
-use Alura\Cursos\Controller\Persistencia;
+use Alura\Cursos\Controller\{Alterar, Exclusao, InserirCurso, ListarCursos, Login, Persistencia, RealizaLogin};
 
-$rotas=[
+return $rotas=[
     "/inserir-curso"=> InserirCurso::class,
     "/listar-cursos"=> ListarCursos::class,
     "/salvar-curso" => Persistencia::class,
     "/excluir-curso"=> Exclusao::class,
-    "/altera-curso"=> Alterar::class
+    "/altera-curso" => Alterar::class,
+    "/login"        => Login::class,
+    "/realizaLogin"=>RealizaLogin::class
 ];
-
-return $rotas;
